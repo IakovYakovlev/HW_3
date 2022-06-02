@@ -2,8 +2,9 @@
 // Напишите тип функции, конкатенирующей две строки
 // concat('Hello ', 'World') // -> Hello World;
 
-
-
+function MyConcatination(a: string, b: string): string {
+    return a + b;
+}
 
 // 2. Работа с интерфейсами
 
