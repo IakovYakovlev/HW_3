@@ -7,20 +7,24 @@ function MyConcatination(a: string, b: string): string {
 }
 
 // 2. Работа с интерфейсами
-
 // Напишите интерфейс для описания следующих данных
 
+const MyHometask : IMyHometask = {
+    howIDoIt: "I Do It Wel",
+    simeArray: ["string one", "string two", 42],
+    withData: [{ howIDoIt: "I Do It Wel", simeArray: ["string one", 23] }],
+}
 
-// const MyHometask = {
+interface IMyHometask {
+    howIDoIt: string,
+    simeArray: [string, string, number],
+    withData: [{
+        howIDoIt: string,
+        simeArray: [string, number]
+    }]
+}
 
-//     howIDoIt: "I Do It Wel",
-
-//     simeArray: ["string one", "string two", 42],
-
-//     withData: [{ howIDoIt: "I Do It Wel", simeArray: ["string one", 23] }],
-
-// }
-
+const testMyHometask = MyHometask.withData;
 
 // 3. Типизация функций, используя Generic
 
