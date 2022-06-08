@@ -27,30 +27,24 @@ interface IMyHometask {
 const testMyHometask = MyHometask.withData;
 
 // 3. Типизация функций, используя Generic
-
 // В уроке про Generics мы написали интерфейс массива MyArray
+interface MyArray<T> {
+  [N: number]: T;
 
-// interface MyArray<T> {
-
-//   [N: number]: T;
-
-    
-
-//  добавьте типизацию для метода reduce
-
-//     reduce();
-
-// }
-
+ // добавьте типизацию для метода reduce
+  reduce<U>(fn:(previousValue: T, currentValue: T, index: number, array: MyArray<T>) => U): U;
+  reduce<U>(fn:(previousValue: T, currentValue: T, index: number, array: MyArray<T>) => U, initialValue: T): U;  
+}
 
 // Справка о работе reduce
-
-// const initialValue = 0;
+const initialValue = 10;
+const myArray: MyArray<number> = [0, 1, 2, 10];
+let variable = myArray.reduce((accumulator, value) => accumulator + value);
 
 // [1,2,3].reduce((accumulator, value) => accumulator + value, initialValue); // -> 6
-
-
-// Результат работы предыдущей функции передается в следующую в качестве аргумента accumulator. На итерации 0 - accumulator === initialValue. Если initialValue не указан, то accumulator это 0 элемент массива
+// Результат работы предыдущей функции передается в следующую в качестве аргумента accumulator. 
+// На итерации 0 - accumulator === initialValue. 
+// Если initialValue не указан, то accumulator это 0 элемент массива
 
 
 // 4. Работа с MappedTypes
